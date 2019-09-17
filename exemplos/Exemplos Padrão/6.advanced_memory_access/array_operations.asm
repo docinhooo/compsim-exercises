@@ -18,9 +18,14 @@
 
 
 select_pos:
+
     LDI ptr_a ; a[i] = value;
     ADD value
-    STI ptr_a
+    STI ptr_a	
+	
+	LDA sum
+	ADD value
+	STA sum
 
     LDA value  ;value += 1
     ADD one
@@ -44,6 +49,7 @@ end:
 .data
     ptr_a: DD a ; int *index_a = a
     size_a: DD 10
+	sum: DD 0
     value: DD 0
     one: DD 1
 
@@ -52,6 +58,7 @@ end:
     a: RESD 10 ; int a[10];
 
 .stack 10
+
 
 
 
