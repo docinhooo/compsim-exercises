@@ -37,7 +37,7 @@ loop2:
 
 .data
 
-    high: DD 32  ;pin 5
+    high: DD 32  ;pin 32
     down: DD 0
 
     arduino_portB: DD 512
