@@ -1,7 +1,7 @@
 ;NOR
 ; not_a = ~(a & a)
 ; not_c = ~(c & c)
-; res = ~(not_c & not_a)
+; res = ~(~(not_c & not_a))
 .code
 
 	LDA a
@@ -15,6 +15,10 @@
 	LDA not_a
 	NAND not_c
 	STA res	
+	
+	LDA res
+	NAND res
+	STA res
 
 exit:
 	INT exit
